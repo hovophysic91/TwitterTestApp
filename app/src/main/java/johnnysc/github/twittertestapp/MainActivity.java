@@ -1,10 +1,13 @@
 package johnnysc.github.twittertestapp;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -43,6 +46,14 @@ public class MainActivity extends AppCompatActivity implements MainView, SearchV
         mRecyclerView.setAdapter(adapter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void showError() {
+        Toast.makeText(this, R.string.error_message, Toast.LENGTH_LONG).show();
+    }
+
     @Override
     public boolean onQueryTextSubmit(String query) {
         mMainPresenter.onQueryTextSubmit(query);
@@ -71,7 +82,9 @@ public class MainActivity extends AppCompatActivity implements MainView, SearchV
     }
 
     private void initSearchView() {
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         mSearchView = findViewById(R.id.search_view);
+        mSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         mSearchView.setOnQueryTextListener(this);
     }
 }

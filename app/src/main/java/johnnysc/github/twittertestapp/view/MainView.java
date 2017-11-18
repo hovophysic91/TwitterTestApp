@@ -16,4 +16,9 @@ public interface MainView {
      * @param adapter recycler view adapter {@link TweetAdapter}
      */
     void updateData(TweetAdapter adapter);
+
+    /**
+     * In case if something went wrong
+     */
+    void showError();
 }

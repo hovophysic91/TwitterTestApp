@@ -43,4 +43,12 @@ public final class MainPresenterImpl implements MainPresenter {
     public void updateData(TweetAdapter adapter) {
         mMainView.updateData(adapter);
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void showError() {
+        mMainView.showError();
+    }
 }
