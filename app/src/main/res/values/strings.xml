@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TwitterTestApp</string>
+    <string name="search_hint">hashtag</string>
 </resources>
