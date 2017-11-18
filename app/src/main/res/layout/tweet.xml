@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/small_padding"
+    android:layout_margin="@dimen/small_padding"
     card_view:cardCornerRadius="@dimen/corner_radius"
     card_view:cardElevation="@dimen/elevation"
     card_view:contentPadding="@dimen/small_padding">
@@ -19,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/tweet_image_view"
-            android:layout_toStartOf="@+id/tweet_image_view"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
             tools:text="some really long tweet in multiline mode also maybe in multiline mode to make sure we can see the tweet icon here"/>
 
@@ -27,9 +26,8 @@
             android:id="@+id/tweet_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tweet_text_view"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:padding="@dimen/tiny_padding"
             android:src="@drawable/tweet_vector"/>
 
